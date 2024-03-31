@@ -55,8 +55,9 @@ const CodeEditor = () => {
   return (
     <div className="w-full p-2">
       <div className="flex gap-3">
-        {listOfOpenFiles?.map((file) => (
+        {listOfOpenFiles?.map((file, index) => (
           <button
+            key={index}
             disabled={file.name === currentFile}
             onClick={() => handleCurrentFile(file.name)}
           >
